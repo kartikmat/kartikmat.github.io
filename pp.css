@@ -12,22 +12,22 @@
 
  .animated
  {
-     animation-duration: 2s;
+     animation-duration: 1s;
      animation-fill-mode: both;
  }
 
  .animated-d
  {
-     animation-duration: 4s;
+     animation-duration: 5s;
      animation-fill-mode: both;
  }
 
  .animated-s {
-     animation-duration: 6s;
+     animation-duration: 1s;
      animation-fill-mode: both;
  }
 
  .animated-a {
-     animation-duration: 8s;
+     animation-duration: 1s;
      animation-fill-mode: both;
  }
