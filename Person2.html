@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>Kartik Mathur</title>
+<link rel="stylesheet" type="text/css" href="pp.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+  
+  <script src="https://cdn.jsdelivr.net/g/jquery@3.2.1(jquery.min.js+jquery.js)"></script>
+  
+  
+<!--Custon Scripts-->
+<script>
+ $("#Scholar_modal").addClass("is-active");
+ $("#Developer_modal").addClass("is-active");
+ $("#Analyst_modal").addClass("is-active");
+</script> 
+
+
+
+<script>
+  function modalDisp(IdName)
+  {
+    $(IdName).addClass("is-active");
+  }
+ function closeModal(IdName)
+ { 
+    $(IdName).removeClass("is-active");
+  }
+</script>
+
+
+
+</head>
+
+<body>
+
+
+<section>
+
+
+  <section class="hero is-dark is-medium is-bold">
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+         
+          <div id="navbarMenu" class="navbar-menu">
+<div class="navbar-start">
+
+
+<div class="tabs is-large animated fadeIn ">
+  <p></p>
+</div>
+
+  </div>
+<div class="navbar-end animated fadeIn">
+              <a class="navbar-item is-active">
+                About
+              </a>
+              <a class="navbar-item">
+                Contact
+              </a>
+              
+<span class="navbar-item animated fadeIn">
+              <a class="button is-active is-medium is-info" href="https://www.linkedin.com/in/kartik-mathur-486b8a132/">
+                  <span class="icon">
+                    <i class="fa fa-linkedin"></i>
+                  </span>
+                  
+                
+                </a>
+                <a class="button is-active is-medium is-success" href="https://github.com/kartikmat">
+                <span class="icon">
+                    <i class="fa fa-github"></i>
+                </span>
+                </a>
+                </span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="hero-body">
+
+<div class="container has-text-centered animated fadeIn">
+        <h1 class="title">
+          Still a Student. Still Trying :)
+        </h1>
+        <h2 class="subtitle">
+          Hey! Glad You're here. Here's a little about me!
+        </h2>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="box cta">
+    
+  </div>
+
+<section class="container animated fadeIn">
+    <div class="columns features">
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-image has-text-centered">
+            <i class="fa fa-code"></i>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h4>Developer </h4>
+              <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque
+                volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra nam.</p>
+              <p>
+                <a href="modalDisp(Developer_modal)">Learn more</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-image has-text-centered">
+          <i class="fa fa-graduation-cap"></i>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h4>Scholar</h4>
+              <p>Ut venenatis tellus in metus vulputate. Amet consectetur adipiscing elit pellentesque. Sed arcu non odio euismod
+                lacinia at quis risus. Faucibus turpis in eu mi bibendum neque egestas cmonsu songue. Phasellus vestibulum
+                lorem sed risus.</p>
+              <p>
+
+            <div id="Scholar_modal" class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+        <!-- Any other Bulma elements you want -->
+      <article class="message is-large">
+      <div class="message-header">
+        <p>Large message</p>
+
+  
+</button>
+      </div>
+      <div class="message-body">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla.Nullam gravida purus diam, et dictum
+      <a>felis venenatis</a> efficitur. Aenean ac
+      <em>eleifend lacus</em>, in mollis lectus.
+    </div>
+    </article>
+        
+        </div>
+<button class="modal-close is-large" aria-label="close">
+  
+</button>
+        </div>
+        <a href="javascript:modalDisp(Scholar_modal)">Learn more</a>
+              </p>
+
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-image has-text-centered">
+          <i class="fa fa-bar-chart"></i>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h4> Analyst </h4>
+              <p>Imperdiet dui accumsan sit amet nulla facilisi morbi. Fusce ut placerat orci nulla pellentesque dignissim enim.
+                Libero id faucibus nisl tincidunt eget nullam. Commodo viverra maecenas accumsan lacus vel facilisis.</p>
+              <p>
+                <a href="#">Learn more</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+</body>
+
+
+
+
+
+</html>
