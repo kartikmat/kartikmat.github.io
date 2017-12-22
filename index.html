@@ -9,7 +9,7 @@
 
   <!-- Site Properties -->
   <title>Kartik Mathur</title>
-<link rel="stylesheet" type="text/css" href="pp.css">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
@@ -17,19 +17,12 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-  
-  <script src="https://cdn.jsdelivr.net/g/jquery@3.2.1(jquery.min.js+jquery.js)"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.css">
+<script src="https://cdn.jsdelivr.net/g/jquery@3.2.1(jquery.min.js+jquery.js)"></script>
+<link rel="stylesheet" type="text/css" href="pp.css">
   
   
 <!--Custon Scripts-->
-<script>
- $("#Scholar_modal").addClass("is-active");
- $("#Developer_modal").addClass("is-active");
- $("#Analyst_modal").addClass("is-active");
-</script> 
-
-
 
 <script>
   function modalDisp(IdName)
@@ -37,21 +30,13 @@
     $(IdName).addClass("is-active");
   }
  function closeModal(IdName)
- { 
+  { 
     $(IdName).removeClass("is-active");
   }
 </script>
-
-
-
 </head>
-
 <body>
-
-
 <section>
-
-
   <section class="hero is-dark is-medium is-bold">
     <div class="hero-head">
       <nav class="navbar">
@@ -114,24 +99,51 @@
 <section class="container animated fadeIn">
     <div class="columns features">
       <div class="column is-4">
-        <div class="card">
+        <div class="card animated-d fadeIn">
           <div class="card-image has-text-centered">
             <i class="fa fa-code"></i>
           </div>
           <div class="card-content">
             <div class="content">
-              <h4>Developer </h4>
+              <h4>Coder </h4>
               <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque
                 volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra nam.</p>
               <p>
-                <a href="modalDisp(Developer_modal)">Learn more</a>
+               
+                    <div id="Developer_modal" class="modal">
+                    
+                        <div class="modal-background"></div>
+                        <div class="modal-content">
+                            <!-- Any other Bulma elements you want -->
+                            <article class="message is-large">
+                                <div class="message-header">
+                                    <p>Large message</p>
+                                </div>
+                                <div class="message-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla.Nullam gravida purus diam, et dictum
+                                    <a>felis venenatis</a> efficitur. Aenean ac
+                                    <em>eleifend lacus</em>, in mollis lectus.
+                                    <a href="javascript:closeModal(Developer_modal)">Close</a>
+                                </div>
+                            </article>
+                        </div>
+                    
+                    
+                    
+                    
+                    </div>
+                    <a href="javascript:modalDisp(Developer_modal)">Read more</a>
+
+
+
               </p>
             </div>
           </div>
         </div>
       </div>
       <div class="column is-4">
-        <div class="card">
+        <div class="card animated-s fadeIn">
           <div class="card-image has-text-centered">
           <i class="fa fa-graduation-cap"></i>
           </div>
@@ -144,30 +156,29 @@
               <p>
 
             <div id="Scholar_modal" class="modal">
-          <div class="modal-background"></div>
-          <div class="modal-content">
-        <!-- Any other Bulma elements you want -->
-      <article class="message is-large">
-      <div class="message-header">
-        <p>Large message</p>
-
-  
-</button>
-      </div>
-      <div class="message-body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla.Nullam gravida purus diam, et dictum
-      <a>felis venenatis</a> efficitur. Aenean ac
-      <em>eleifend lacus</em>, in mollis lectus.
-    </div>
-    </article>
-        
-        </div>
-<button class="modal-close is-large" aria-label="close">
-  
-</button>
-        </div>
-        <a href="javascript:modalDisp(Scholar_modal)">Learn more</a>
+            
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <!-- Any other Bulma elements you want -->
+                    <article class="message is-large">
+                        <div class="message-header">
+                            <p>Large message</p>
+                        </div>
+                        <div class="message-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla.Nullam gravida purus diam, et dictum
+                            <a>felis venenatis</a> efficitur. Aenean ac
+                            <em>eleifend lacus</em>, in mollis lectus.
+                            <a href="javascript:closeModal(Scholar_modal)">Close</a>
+                        </div>
+                    </article>
+                </div>
+            
+            
+            
+            
+            </div>
+            <a href="javascript:modalDisp(Scholar_modal)">Read more</a>
               </p>
 
               
@@ -177,7 +188,7 @@
         </div>
       </div>
       <div class="column is-4">
-        <div class="card">
+        <div class="card animated-s fadeIn">
           <div class="card-image has-text-centered">
           <i class="fa fa-bar-chart"></i>
           </div>
@@ -187,7 +198,30 @@
               <p>Imperdiet dui accumsan sit amet nulla facilisi morbi. Fusce ut placerat orci nulla pellentesque dignissim enim.
                 Libero id faucibus nisl tincidunt eget nullam. Commodo viverra maecenas accumsan lacus vel facilisis.</p>
               <p>
-                <a href="#">Learn more</a>
+
+
+                <div id="Analyst_modal" class="modal">
+                
+                    <div class="modal-background"></div>
+                    <div class="modal-content">
+                        <!-- Any other Bulma elements you want -->
+                        <article class="message is-large">
+                            <div class="message-header">
+                                <p>Large message</p>
+                            </div>
+                            <div class="message-body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla.Nullam gravida purus diam, et dictum
+                                <a>felis venenatis</a> efficitur. Aenean ac
+                                <em>eleifend lacus</em>, in mollis lectus.
+                                <a href="javascript:closeModal(Analyst_modal)">Close</a>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+                <a href="javascript:modalDisp(Analyst_modal)">Read more</a>
+       
               </p>
             </div>
           </div>
