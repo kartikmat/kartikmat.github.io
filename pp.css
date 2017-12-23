@@ -18,7 +18,7 @@
 
  .animated-d
  {
-     animation-duration: 5s;
+     animation-duration: 3s;
      animation-fill-mode: both;
  }
 
@@ -31,3 +31,4 @@
      animation-duration: 1s;
      animation-fill-mode: both;
  }
+
