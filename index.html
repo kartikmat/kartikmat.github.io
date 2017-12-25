@@ -21,7 +21,8 @@
 
 <script>
   function modalDisp(IdName)
-  {    
+  {
+
     $(IdName).addClass("is-active");
   }
  function closeModal(IdName)
@@ -43,24 +44,17 @@
 
 <div class="tabs is-large animated fadeIn ">
   <p></p>
-</div>
-
-  </div>
+    </div>
+          </div>
 <div class="navbar-end animated fadeIn">
               <a class="navbar-item is-active" href="https://kartikmat.github.io/">
                 About
               </a>
-              <a class="navbar-item" href="contact.html">
-                Contact
-              </a>
-              
 <span class="navbar-item animated fadeIn">
               <a class="button is-active is-medium is-info" href="https://www.linkedin.com/in/kartik-mathur-486b8a132/">
                   <span class="icon">
                     <i class="fa fa-linkedin"></i>
                   </span>
-                  
-                
                 </a>
                 <a class="button is-active is-medium is-success" href="https://github.com/kartikmat">
                 <span class="icon">
@@ -87,9 +81,7 @@
 
   </section>
 
-  <div class="box cta">
-    
-  </div>
+ <br/>
 
 <section class="container animated-d fadeIn">
     <div class="columns features">
@@ -97,34 +89,47 @@
         <div class="card">
           <div class="card-image has-text-centered">
             
-            <i class="fa fa-code"></i>
+            <i class="fa fa-code" style="font-size: 5em;"></i>
           </div>
           <div class="card-content">
             <div class="content">
-              <h4>Coder </h4>
+              <h1 align="center">Coder</h1>
            
-              <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque
-                volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra nam.</p>
+              <p></p>
                 <figure class="image is-2by2">
-                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                    <img src="DeveloperWork.jpg" alt="Placeholder image" onclick="javascript:modalDisp(Developer_modal)">
                 </figure>
               <p>
                
                     <div id="Developer_modal" class="modal">
                     
-                        <div class="modal-background"></div>
-                        <div class="modal-content">
-                            <!-- Any other Bulma elements you want -->
-                            <article class="message is-large">
-                                <div class="message-header">
-                                    <p>Large message</p>
-                                </div>
-                                <div class="message-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla.Nullam gravida purus diam, et dictum
-                                    <a>felis venenatis</a> efficitur. Aenean ac
-                                    <em>eleifend lacus</em>, in mollis lectus.
-                                    <a href="javascript:closeModal(Developer_modal)">Close</a>
+                    <div class="modal-background"></div>
+                    <div class="modal-content animated-d fadeIn">
+                
+                    <article class="message is-large">
+                    <div class="message-header">
+                    <p>
+                    </p>
+                    <a href="javascript:closeModal(Developer_modal)">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                    </a>
+                    </div>
+                    <div class="message-body">
+                    <p>
+                     C++ <progress class="progress is-info" value="50" max="100">  </progress>
+                    Java <progress class="progress is-primary" value="10" max="100"> </progress>
+                    Python <progress class="progress is-success" value="30" max="100"> </progress>
+                     HTML  <progress class="progress is-warning" value="20" max="100"> </progress>
+                    JavaScript <progress class="progress is-danger" value="20" max="100"> </progress>
+                    CSS <progress class="progress" value="35" max="100"> </progress>
+                    </p>
+                    <p>
+                    I’m currently pursuing my bachelor’s in Computer Science and Business Administration at USC. Over the course of two year,
+                    I’ve gained proficiency in concepts like Data Structures and Object-Oriented Programming (C++), I’ve also gained experience
+                    with writing sophisticated concurrent applications with animations and GUI’s (Java). Outside of my academics, I’ve interacted
+                    with JavaScript, CSS, HTML and Python. I’m familiar with Linux(Bash) and Windows environments.
+                    </p>
+                                    
                                 </div>
                             </article>
                         </div>
@@ -138,39 +143,54 @@
       <div class="column is-4">
         <div class="card ">
           <div class="card-image has-text-centered">
-          <i class="fa fa-graduation-cap"></i>
+          <i class="fa fa-graduation-cap" style="font-size: 5em; "></i>
           </div>
-          <div class="card-content">
+          <div class="card-content">  
             <div class="content">
-              <h4>Learner</h4>
-              <p>Ut venenatis tellus in metus vulputate. Amet consectetur adipiscing elit pellentesque. Sed arcu non odio euismod
-                lacinia at quis risus. Faucibus turpis in eu mi bibendum neque egestas cmonsu songue. Phasellus vestibulum
-                lorem sed risus.</p>
+             
+              <h1 align="center">Student</h1>
                 <figure class="image is-2by2">
-                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                    <img src="insignia.jpg" alt="Placeholder image" onclick="javascript:modalDisp(Scholar_modal)">
                 </figure>
               <p>
 
             <div id="Scholar_modal" class="modal">
             
                 <div class="modal-background"></div>
-                <div class="modal-content">
-                    <!-- Any other Bulma elements you want -->
+                <div class="modal-content animated-d fadeIn">
+                    
                     <article class="message is-large">
                         <div class="message-header">
-                            <p>Large message</p>
+                            <p></p>
+                            <a href="javascript:closeModal(Scholar_modal)">
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                            </a>
                         </div>
                         <div class="message-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla.Nullam gravida purus diam, et dictum
-                            <a>felis venenatis</a> efficitur. Aenean ac
-                            <em>eleifend lacus</em>, in mollis lectus.
-                            <a href="javascript:closeModal(Scholar_modal)">Close</a>
+                          <p>
+                            Sophomore and Loving it!
+                            <ul>
+                              <li>USC Aerial Robotics
+                                <p>
+                                   • Reached out to create and maintain relationships with our sponsors. • Utilized Microsoft Excel to manage the club’s finances.
+
+                                </p>
+                              </li>
+                              <li>USC SASE(Society of Asian Scientists and Engineers)
+                                <p>
+                                   • Organized events and awareness activities for the support of Asian internationals at USC. • Worked to promote an overall
+                                  acceptance of foreign students by holding cultural and professional events.
+
+                                </p>
+                              </li>
+                              
+                            </ul>
+                          </p>
                         </div>
                     </article>
                 </div>
             </div>
-            <a href="javascript:modalDisp(Scholar_modal)">Read more</a>
+          <a href="javascript:modalDisp(Scholar_modal)">Read more</a>
             </p>
             
              
@@ -182,34 +202,42 @@
       <div class="column is-4">
         <div class="card ">
           <div class="card-image has-text-centered">
-          <i class="fa fa-bar-chart"></i>
+          <i class="fa fa-bar-chart" style="font-size: 5em; "></i>
           </div>
           <div class="card-content animated-a fadeIn">
             <div class="content">
-              <h4> Analyst </h4>
-              <p>Imperdiet dui accumsan sit amet nulla facilisi morbi. Fusce ut placerat orci nulla pellentesque dignissim enim.
-                Libero id faucibus nisl tincidunt eget nullam. Commodo viverra maecenas accumsan lacus vel facilisis.</p>
-            <figure class="image is-2by2">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+              <h1 align="center">Analyst</h1>
+              <p></p>
+           
+            <figure class="image is-2by2"> 
+                <img src="FR.png" alt="Placeholder image" onclick="javascript:modalDisp(Analyst_modal)">
             </figure>
              <p>
-
-
-                <div id="Analyst_modal" class="modal">
-                
+                <div id="Analyst_modal" class="modal">         
                     <div class="modal-background"></div>
-                    <div class="modal-content">
-                        <!-- Any other Bulma elements you want -->
+                    <div class="modal-content animated-d fadeIn">
                         <article class="message is-large">
                             <div class="message-header">
-                                <p>Large message</p>
+                                <p></p>
+                                <a href="javascript:closeModal(Analyst_modal)">
+                                  <i class="fa fa-times" aria-hidden="true"></i>
+                                </a>
                             </div>
                             <div class="message-body">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla.Nullam gravida purus diam, et dictum
-                                <a>felis venenatis</a> efficitur. Aenean ac
-                                <em>eleifend lacus</em>, in mollis lectus.  
-                                <a href="javascript:closeModal(Analyst_modal)">Close</a>
+                              <p>
+                                R
+                                <progress class="progress is-info" value="40" max="100"> </progress>
+                                Python (Data Science)
+                                <progress class="progress is-primary" value="20" max="100"> </progress>
+                              </p>
+                              
+                              <p>
+                                In my freshman year, I worked for the consumer behavior lab at USC, I then joined the Socio-Political Economics Lab at USC.
+                                The data I have worked with has helped the university to advance research theory of International conflict. I’ve also learned
+                                about Node research and social network analysis during my time at SPEC USC. I’ve enjoyed learning about the applications
+                                of data outside of a programming perspective and it’s something I want to take more time to learn about.
+                              </p>
+                                
                             </div>
                         </article>
                     </div>
