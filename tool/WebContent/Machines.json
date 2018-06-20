@@ -1,0 +1,89 @@
+[
+	{
+	"MachineName":"Patient Monitor",
+	"questions":[
+	{"question":"No. of Parameters?","choices":["3 Para","5 Para"],"choice":""},
+	{"question":"Display Control type?","choices":["Touch Screen","Normal"],"choice":""},
+	{"question":"Patient Type?","choices":["Adult","Pediatric","Neonatal"],"choice":""},
+	{"question":"Is IBP required?","choices":["Yes","No"],"choice":""},
+	{"question":"Is ETCO2 module needed? ","choices":["Yes","No"],"choice":""},
+	{"question":"No. of ECG leads needed?","choices":["3","5"],"choice":""}]
+	},
+	{
+	"MachineName":"Warmer",
+	"questions":[
+	{"question":"Warmer Type?","choices":["Baby Warmer","Side Warmer"],"choice":""},
+	{"question":"Warmer required is?","choices":["with Blender","without Blender"],"choice":""},
+	{"question":"Is suction required?","choices":["Yes","No"],"choice":""},
+	{"question":"Is LED phototherapy under surface required?","choices":["Yes","No"],"choice":""},
+	{"question":"With weighing scale?","choices":["Yes","No"],"choice":""},
+	{"question":"With Spo2 probe?","choices":["Yes","No"],"choice":""}]
+	},
+	{
+	"MachineName":"Phototherapy",
+	"questions":[
+	{"question":"Surface requirement?","choices":["Bottom surface","top surface","Both"],"choice":""},
+	{"question":"Type of lighting?","choices":["CFL","LED","Optical Fiber"],"choice":""}]
+	},
+	{
+	"MachineName":"BP Apparatus",
+	"questions":[
+	{"question":"Type of Measurement?","choices":["Manual","Digital"],"choice":""},
+	{"question":"Mercury?","choices":["with","without"],"choice":""},
+	{"question":"Type of Cuff?","choices":["Adult","Pediatric"],"choice":""},
+	{"question":"Type of apparatus?","choices":["Portable","No"],"choice":""}]
+	},
+	{
+	"MachineName":"Weighing Machine",
+	"questions":[
+	{"question":"Type of Measurement?","choices":["Analog","Digital"],"choice":""},
+	{"question":"Patient Type?","choices":["Adult","Pediatric"],"choice":""}]
+	},
+	{
+	"MachineName":"Incubator",
+	"questions":[
+	{"question":"Usage Type?","choices":["in hospital","Transport"],"choice":""},
+	{"question":"is Warmer Needed?","choices":["Yes","No"],"choice":""},
+	{"question":"Type of Incubator?","choices":["Closed box","Open box"],"choice":""},
+	{"question":"Is Weighing Machine required?","choices":["Yes","No"],"choice":""},
+	{"question":"With Spo2 probe?","choices":["Yes","No"],"choice":""}]
+	},
+	{
+	"MachineName":"Fetal Doppler",
+	"questions":[
+	{"question":"Type of Battery?","choices":["Alkaline","Rechargeable"],"choice":""},
+	{"question":"Modes?","choices":["Various","Not"],"choice":""},
+	{"question":"Color?","choices":["B / W","Color"],"choice":""}]
+	},
+	{
+	"MachineName":"Fetal Monitor/NST Machine",
+	"questions":[
+	{"question":"No. of Probes?","choices":["Twin Probe","Single Probe"],"choice":""},
+	{"question":"With NIBP?","choices":["Yes","No"],"choice":""},
+	{"question":"With SPO2?","choices":["Yes","No"],"choice":""},
+	{"question":"With ECG cable?","choices":["Yes","No"],"choice":""},
+	{"question":"With LCD screen?","choices":["Yes","No"],"choice":""},
+	{"question":"Option for central monitoring system needed?","choices":["Yes","No"],"choice":""},
+	{"question":"Is Battery backup required?","choices":["Yes","No"],"choice":""}]
+	},
+	{
+	"MachineName":"Spot Light",
+	"questions":[
+	{"question":"Type?","choices":["Halogen","LED"],"choice":""},
+	{"question":"With Intensity adjustment?","choices":["Yes","No"],"choice":""},
+	{"question":"Portability?","choices":["Portable","Fixed"],"choice":""},
+	{"question":"Brightness required?","choices":["Yes","No"],"choice":""},
+	{"question":"Shape of Bulb?","choices":["Yes","No"],"choice":""}]
+	},
+	{
+	"MachineName":"Pulse Oximeter",
+	"questions":[
+	{"question":"Type?","choices":["Finger Type","Table top"],"choice":""},
+	{"question":"Display Control type?","choices":["Touch Screen","Normal"],"choice":""},
+	{"question":"Patient Type?","choices":["Adult","Pediatric","Neonatal"],"choice":""},
+	{"question":"Reusable?","choices":["Disposable","Reusable"],"choice":""},
+	{"question":"Type of Battery?","choices":["Alkaline","Rechargeable"],"choice":""},
+	{"question":"Probe Type?","choices":["Finger","Ear","Nasal"],"choice":""}]
+	}
+	
+]
