@@ -1,7 +1,6 @@
 /**
  * 
  */
-
 var myQuestions = [
 	{
 		question: "Thank you for Answering! We will get back to you shortly",
@@ -25,13 +24,9 @@ var myQuestions = [
 	}
 ];
 
-
-
 function buildQuiz(myQuestions) {
 	// we'll need a place to store the HTML output
 	console.log("BuildQuiz has started");
-
-
 	const output = [];
 	for (var j = 0, len = myQuestions.length; j < len; j++) {
 		currentQuestion = myQuestions[j];
@@ -168,8 +163,6 @@ function processChoice() {
 const quizContainer = document.getElementById("quiz");
 const resultsContainer = document.getElementById("results");
 const submitButton = document.getElementById("submit");
-
-
 // display right away
 buildQuiz(myQuestions);
 var validation = document.getElementById("validation");
@@ -275,7 +268,7 @@ $(document).ready(function () {
 	});
 });
 function validate(nameText, mailText, phoneText) {
-	console.log("nameText: "+ nameText)
+	console.log("nameText: " + nameText)
 	console.log("mailText: " + mailText)
 	console.log("phoneText: " + phoneText)
 	if (nameText == "" || mailText == "" || phoneText == "") {
@@ -284,7 +277,7 @@ function validate(nameText, mailText, phoneText) {
 	return true;
 }
 function saveDetails() {
-	
+
 	var contactForm = document.getElementById("contactForm");
 	var nameText = document.getElementById("nameText").value;
 	var mailText = document.getElementById("mailText").value;
@@ -300,14 +293,14 @@ function saveDetails() {
 		validation.style.display = "none";
 		summarize();
 	}
-	else{
+	else {
+		console.log("Please enter thing");		
 		validation.style.display = "block";
 	}
-	
 }
+
 function summarize() {
 	var summary = document.getElementById("summary");
-
 	summaryString = `
 				<label>Does this seem right?</label>
 				<ul>
@@ -324,7 +317,7 @@ function summarize() {
 
 	}
 	summaryString += `</ul>`
-	summaryString += `<button onclick="hideModal()">Close</button>`
+	summaryString += `<button onclick="hideModal()">Submit</button><br>`
 	summaryString += `<button onclick="location.reload();">Restart</button>`
 	summary.innerHTML = summaryString;
 

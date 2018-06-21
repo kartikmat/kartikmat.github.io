@@ -22,29 +22,26 @@
         <font style="color: rgb(243, 12, 12);">Please Enter the specified fields</font>
       </div>
       <div id="contactForm">
-      <form onsubmit="saveDetails()">
-        Please enter your details so that we can get back to you.
-        <br>
-        <label>Name</label>
-        <br>
-        <input type="text" id="nameText">
-        <br>
-        <label>E-mail</label>
-        <br>
-        <input type="text" id="mailText">
-        <br>
-        <label>Phone no.</label>
-        <br>
-        <input type="text" id="phoneText">
-        <br>
-        <br>
-        <button onclick="saveDetails()" type="submit">View Summary</button>
-      </form>
-          </div>
+          Please enter your details so that we can get back to you.
+          <br>
+          <label>Name</label>
+          <br>
+          <input type="text" id="nameText">
+          <br>
+          <label>E-mail</label>
+          <br>
+          <input type="text" id="mailText">
+          <br>
+          <label>Phone no.</label>
+          <br>
+          <input type="text" id="phoneText">
+          <br>
+          <br>
+          <button onclick="saveDetails()">View Summary</button>
+       
+      </div>
     </div>
-
   </div>
-
   <div class="right">
     <div class="dropdown">
       <button class="dropbtn">Please Choose</button>
@@ -118,7 +115,7 @@
                 </div>
                 <input name="captcha[post_your_requirement]" type="text" class="input-text required-entry" data-validate="{required:true}"
                   id="captcha_post_your_requirement" placeholder="Please type the letters above" aria-required="true">
-                <!-- <div class="captcha-note note"></div>--></div>
+              </div>
             </div>
           </div>
         </fieldset>
@@ -141,10 +138,10 @@
   <button id="previous">
     Prev</button>
   <button type="submit" id="next">Next</button>
-
   <div id="results"></div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script type="text/javascript" src="Content.js"></script>
 
 </body>
+
 </html>
