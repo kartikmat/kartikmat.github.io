@@ -1,6 +1,7 @@
 {
   "name": "wc-mind",
   "version": "0.1.0",
+  "homepage" : "http://myname.github.io/rTopComment",
   "private": true,
   "dependencies": {
     "bootstrap": "^4.1.1",
