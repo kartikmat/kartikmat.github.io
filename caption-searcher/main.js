@@ -12,7 +12,7 @@ const channelForm = document.getElementById('channel-form');
 const channelInput = document.getElementById('channel-input');
 const videoContainer = document.getElementById('video-container');
 
-const defaultChannel = 'techguyweb';
+const defaultChannel = 'TheSw1tcher';
 
 // Form submit and change channel
 channelForm.addEventListener('submit', e => {
@@ -86,7 +86,7 @@ function getChannel(channel) {
       forUsername: channel
     })
     .then(response => {
-      console.log(response);
+     
       const channel = response.result.items[0];
 
       const output = `
@@ -114,7 +114,7 @@ function getChannel(channel) {
       const playlistId = channel.contentDetails.relatedPlaylists.uploads;
       requestVideoPlaylist(playlistId);
     })
-    .catch(err => alert('No Channel By That Name'));
+    .catch(err => alert('Does not exist'));
 }
 
 // Add commas to number
@@ -132,7 +132,7 @@ function requestVideoPlaylist(playlistId) {
   const request = gapi.client.youtube.playlistItems.list(requestOptions);
 
   request.execute(response => {
-    console.log(response);
+  
     const playListItems = response.result.items;
     if (playListItems) {
       let output = '<br><h4 class="center-align">Latest Videos</h4>';
