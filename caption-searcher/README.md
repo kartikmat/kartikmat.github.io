@@ -10,8 +10,7 @@ Add Your OAuth client id to main.js and open index.html
 
 ### Author
 
-Brad Traversy
-[Traversy Media](http://www.traversymedia.com)
+Kartik Mathur
 
 ### Version
 
