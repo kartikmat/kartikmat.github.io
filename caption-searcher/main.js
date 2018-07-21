@@ -147,35 +147,38 @@ function parseXML(xml){
     return caption;
 }
 
-function makeRequest(videoId,url)
+function callback(response)
 {
-    console.log(videoId,url);
-    var caption="";
-    $.ajax({
-            type: "POST",
-            url: url
-          }).done(function (response) {
-           
-            console.dir(response);
-            caption=parseXML(response);
-            
-          }).fail(function (response) {
-            console.log();
-          });
 
+  var caption=parseXML(response);
   console.log("The keyword is"+keyword);
   console.log("The caption is"+caption);
           
   if(contains(keyword,caption))
-            {
-              return true;
-            }
-            else
-            {
-              return false;
-            }
+  {
+     console.log("The phrase is in the video");
+         
+     output = `
+      <div class="col s3">
+      <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      `;
+      // Output videos
+     videoContainer.innerHTML += output;
+       
+  }
 
+}
 
+function makeRequest(videoId,url)
+{
+    console.log(videoId,url);
+    
+    $.ajax({
+            type: "POST",
+            url: url,
+            success: callback
+          });
 }
 
 
@@ -192,31 +195,16 @@ function requestVideoPlaylist(playlistId) {
   
     const playListItems = response.result.items;
     if (playListItems) {
-      let output = '<br><h4 class="center-align">Latest Videos</h4>';
+      videoContainer.innerHTML = '<br><h4 class="center-align">Latest Videos</h4>';
 
       // Loop through videos and append output
       playListItems.forEach(item => {
         const videoId = item.snippet.resourceId.videoId;
         const url="https://video.google.com/timedtext?lang=en&v="+videoId;
-        if(makeRequest(videoId,url)){
-          console.log("The phrase is in the video");
-          
-          output += `
-          <div class="col s3">
-          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-            `;
-        }
-        else{
-          console.log("The phrase is NOTTT in the video");
-        }
-        });
-
-      // Output videos
-        videoContainer.innerHTML = output;
-       
+        makeRequest(videoId,url)
+        });  
     } else {
-      videoContainer.innerHTML = 'No Uploaded Videos';
+      videoContainer.innerHTML += 'No Uploaded Videos';
     }
   });
 }
