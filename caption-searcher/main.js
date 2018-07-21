@@ -179,10 +179,10 @@ function requestVideoPlaylist(playlistId) {
                        
                         console.log("The keyword is" + keyword);
                         console.log("The caption is" + caption);
-
+                        
                         if (contains(keyword, caption)) {
                             console.log("The phrase is in the video");
-
+                            console.log("The videoId is " + videoId);
                             output = `
       <div class="col s3">
       <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
