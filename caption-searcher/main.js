@@ -136,14 +136,15 @@ function contains(key,caption)
 function parseXML(xml){
     console.log("Parsing");
     var caption="";
-    for (let index = 0; index < xml.childNodes[0].childNodes.length; index++) {
-        
-        console.log(xml.childNodes[0].childNodes[index].innerHTML);
-        caption+=xml.childNodes[0].childNodes[index].innerHTML;
-        
-       
+    if(xml.childNodes!=undefined)
+    {
+        for (let index = 0; index < xml.childNodes[0].childNodes.length; index++) {
+          caption+=xml.childNodes[0].childNodes[index].innerHTML;
+        }
     }
-  return caption;
+  
+    console.log(caption);
+    return caption;
 }
 
 function makeRequest(videoId,url)
@@ -156,7 +157,8 @@ function makeRequest(videoId,url)
           }).done(function (response) {
            
             console.dir(response);
-            if(contains(keyword,parseXML(response)))
+            var caption=parseXML(response);
+            if(contains(keyword,caption))
             {
               return true;
             }
