@@ -152,7 +152,7 @@ function requestVideoPlaylist(playlistId) {
     const requestOptions = {
         playlistId: playlistId,
         part: 'snippet',
-        maxResults: 10
+        maxResults: 20
     };
 
     const request = gapi.client.youtube.playlistItems.list(requestOptions);
