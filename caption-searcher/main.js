@@ -143,6 +143,7 @@ function makeRequest(videoId)
             url: "https://video.google.com/timedtext?lang=en&v=5MgBikgcWnY"
           }).done(function (response) {
             console.log(response);
+            console.dir(response);
             parseXML(response);
           }).fail(function (response) {
             console.log();
