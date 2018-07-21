@@ -12,7 +12,7 @@ const channelInput = document.getElementById('channel-input');
 const keyword = document.getElementById('keyword');
 const videoContainer = document.getElementById('video-container');
 
-const defaultChannel = 'TheSw1tcher';
+const defaultChannel = 'tseries';
 
 // Form submit and change channel
 channelForm.addEventListener('submit', e => {
@@ -148,11 +148,11 @@ function parseXML(xml){
 
 function makeRequest(videoId)
 {
-    console.log(videoId);
+    console.log(videoId,url);
 
     $.ajax({
             type: "POST",
-            url: "https://video.google.com/timedtext?lang=en&v="+videoId
+            url: url
           }).done(function (response) {
            
             console.dir(response);
@@ -188,20 +188,21 @@ function requestVideoPlaylist(playlistId) {
       // Loop through videos and append output
       playListItems.forEach(item => {
         const videoId = item.snippet.resourceId.videoId;
-        
-        if(makeRequest(videoId))
+        const url="https://video.google.com/timedtext?lang=en&v="+videoId;
+        if(makeRequest(videoId,url))
         {
-        
-        output += `
+          console.log("The phrase is in the video");
+          
+          output += `
           <div class="col s3">
           <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
             `;
         }
-            });
+        });
 
       // Output videos
-            videoContainer.innerHTML = output;
+        videoContainer.innerHTML = output;
        
     } else {
       videoContainer.innerHTML = 'No Uploaded Videos';
