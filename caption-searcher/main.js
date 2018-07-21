@@ -150,15 +150,19 @@ function parseXML(xml){
 function makeRequest(videoId,url)
 {
     console.log(videoId,url);
-
+    var caption="";
     $.ajax({
             type: "POST",
             url: url
           }).done(function (response) {
            
             console.dir(response);
-            var caption=parseXML(response);
-            if(contains(keyword,caption))
+            caption=parseXML(response);
+            
+          }).fail(function (response) {
+            console.log();
+          });
+  if(contains(keyword,caption))
             {
               return true;
             }
@@ -166,9 +170,8 @@ function makeRequest(videoId,url)
             {
               return false;
             }
-          }).fail(function (response) {
-            console.log();
-          });
+
+
 }
 
 
@@ -191,8 +194,7 @@ function requestVideoPlaylist(playlistId) {
       playListItems.forEach(item => {
         const videoId = item.snippet.resourceId.videoId;
         const url="https://video.google.com/timedtext?lang=en&v="+videoId;
-        if(makeRequest(videoId,url))
-        {
+        if(makeRequest(videoId,url)){
           console.log("The phrase is in the video");
           
           output += `
@@ -200,6 +202,9 @@ function requestVideoPlaylist(playlistId) {
           <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
             `;
+        }
+        else{
+          console.log("The phrase is NOTTT in the video");
         }
         });
 
