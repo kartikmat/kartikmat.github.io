@@ -194,7 +194,7 @@ function requestVideoPlaylist(playlistId) {
                 });
             });
         } else {
-            videoContainer.innerHTML += 'No Uploaded Videos';
+            videoContainer.innerHTML = 'No Uploaded Videos';
         }
     });
 }
