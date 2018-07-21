@@ -146,7 +146,7 @@ function parseXML(xml){
   return caption;
 }
 
-function makeRequest(videoId)
+function makeRequest(videoId,url)
 {
     console.log(videoId,url);
 
