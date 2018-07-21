@@ -121,13 +121,34 @@ function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
+function parseXML(xml){
+    var searchFor = "it";
+    var reg = new RegExp(searchFor, "i");
+    $(xml).find('entry').each(function(){
+        var title = $(this).find('title').text();
+        var titleSearch = title.search(reg);
+        var desc = $(this).find('description').text();
+        var descSearch = desc.search(reg);
+        $('#output').empty();
+        if(titleSearch > -1){
+            $('#output').append('Found <i>'+searchFor+'<\/i> in title: '+title.replace(reg, '<b>'+searchFor+'</b>')+'<br \/>');
+        }
+        if(descSearch > -1){
+            $('#output').append('Found <i>'+searchFor+'<\/i> in description: '+desc.replace(reg, '<b>'+searchFor+'</b>')+'<br \/>');
+        }
+    });    
+}
+
 function makeRequest(videoId)
 {
+    console.log(videoId);
+    
     $.ajax({
             type: "POST",
             url: "https://video.google.com/timedtext?lang=en&v=5MgBikgcWnY"
           }).done(function (response) {
             console.log(response);
+            parseXML(response);
           }).fail(function (response) {
             console.log();
           });
