@@ -161,7 +161,7 @@ function requestVideoPlaylist(playlistId) {
 
         const playListItems = response.result.items;
         if (playListItems) {
-            videoContainer.innerHTML = '<br><h4 class="center-align">Suggested Videos</h4>';
+            videoContainer.innerHTML = '<br><h4 class="center-align">Suggested Videos(Please wait for a few seconds..)</h4>';
 
             // Loop through videos and append output
             playListItems.forEach(item => {
