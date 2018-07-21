@@ -123,20 +123,15 @@ function numberWithCommas(x) {
 
 function parseXML(xml){
     console.log("Parsing");
+    console.log(xml.transcripts);
+    console.log(xml.texts);
+   
+    console.log(xml.getElementsByTagName(transcript));
+    console.log(xml.getElementsByTagName(text));
+    console.log(xml.getElementsByTagName(transcript));
     
-    var searchFor = "it";
-    var reg = new RegExp(searchFor, "i");
-    $(xml).find('entry').each(function(){
-        var text = $(this).find('text').text();
-        var textSearch = text.search(reg);
-        var desc = $(this).find('description').text();
-        var descSearch = desc.search(reg);
-        $('#output').empty();
-        if(textSearch > -1){
-            $('#output').append('Found <i>'+searchFor+'<\/i> in title: '+text.replace(reg, '<b>'+searchFor+'</b>')+'<br \/>');
-        }
-        
-    });    
+   
+    
 }
 
 function makeRequest(videoId)
@@ -172,8 +167,8 @@ function requestVideoPlaylist(playlistId) {
       // Loop through videos and append output
       playListItems.forEach(item => {
         const videoId = item.snippet.resourceId.videoId;
-        //Comment
-        makeRequest(videoId);      
+        
+        makeRequest(videoId);
         output += `
           <div class="col s3">
           <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
