@@ -12,7 +12,7 @@ const channelInput = document.getElementById('channel-input');
 const keyword = document.getElementById('keyword');
 const videoContainer = document.getElementById('video-container');
 
-const defaultChannel = 'tseries';
+const defaultChannel = 'TheSw1tcher';
 
 // Form submit and change channel
 channelForm.addEventListener('submit', e => {
@@ -196,6 +196,7 @@ function requestVideoPlaylist(playlistId) {
            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
            </div>
             `;
+        }
             });
 
       // Output videos
