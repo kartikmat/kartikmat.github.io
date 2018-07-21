@@ -152,7 +152,7 @@ function makeRequest(videoId)
 
     $.ajax({
             type: "POST",
-            url: "https://video.google.com/timedtext?lang=en&v=5MgBikgcWnY"
+            url: "https://video.google.com/timedtext?lang=en&v="+videoId
           }).done(function (response) {
            
             console.dir(response);
