@@ -9,7 +9,7 @@ const signoutButton = document.getElementById('signout-button');
 const content = document.getElementById('content');
 const channelForm = document.getElementById('channel-form');
 const channelInput = document.getElementById('channel-input');
-const keywordInput = document.getElementById('keyword');
+
 const videoContainer = document.getElementById('video-container');
 
 const defaultChannel = 'tseries';
@@ -19,9 +19,9 @@ channelForm.addEventListener('submit', e => {
     e.preventDefault();
 
     const channel = channelInput.value;
-    const keyword = keywordInput.value;
+   
 
-    getChannel(channel,keyword);
+    getChannel(channel);
 });
 
 // Load auth2 library
@@ -80,7 +80,7 @@ function showChannelData(data) {
 }
 
 // Get channel from API
-function getChannel(channel,keyword) {
+function getChannel(channel) {
     gapi.client.youtube.channels
         .list({
             part: 'snippet,contentDetails,statistics',
@@ -113,7 +113,7 @@ function getChannel(channel,keyword) {
             showChannelData(output);
 
             const playlistId = channel.contentDetails.relatedPlaylists.uploads;
-            requestVideoPlaylist(playlistId,keyword);
+            requestVideoPlaylist(playlistId);
         })
         .catch(err => alert('Does not exist'));
 }
@@ -148,7 +148,7 @@ function parseXML(xml) {
 }
 
 
-function requestVideoPlaylist(playlistId,keyword) {
+function requestVideoPlaylist(playlistId) {
     const requestOptions = {
         playlistId: playlistId,
         part: 'snippet',
@@ -156,7 +156,7 @@ function requestVideoPlaylist(playlistId,keyword) {
     };
 
     const request = gapi.client.youtube.playlistItems.list(requestOptions);
-    console.log("The keyword is" + keyword);
+
     request.execute(response => {
 
         const playListItems = response.result.items;
@@ -175,6 +175,7 @@ function requestVideoPlaylist(playlistId,keyword) {
                     success: function(response, videoId) {
 
                         var caption = parseXML(response);
+                        var keyword = document.getElementById('keyword').value;
                        
                         console.log("The keyword is" + keyword);
                         console.log("The caption is" + caption);
