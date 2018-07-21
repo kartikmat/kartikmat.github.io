@@ -1,4 +1,3 @@
-// Options
 const CLIENT_ID = '203720257472-8a5br89hm01bjoocnq7ftkgedd3mnga9.apps.googleusercontent.com';
 const DISCOVERY_DOCS = [
   'https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'
@@ -140,6 +139,15 @@ function requestVideoPlaylist(playlistId) {
       // Loop through videos and append output
       playListItems.forEach(item => {
         const videoId = item.snippet.resourceId.videoId;
+        
+         $.ajax({
+            type: "POST",
+            url: "https://video.google.com/timedtext?lang=en&v=5MgBikgcWnY"
+          }).done(function (response) {
+            console.log(response);
+          }).fail(function (response) {
+            console.log();
+          });
 
         output += `
           <div class="col s3">
