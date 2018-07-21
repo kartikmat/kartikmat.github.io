@@ -121,11 +121,11 @@ function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
-function makeRequest()
+function makeRequest(videoId)
 {
     $.ajax({
             type: "POST",
-            url: "https://video.google.com/timedtext?lang=en&v=5MgBikgcWnY"
+            url: "https://video.google.com/timedtext?lang=en&v="+videoId
           }).done(function (response) {
             console.log(response);
           }).fail(function (response) {
@@ -152,9 +152,7 @@ function requestVideoPlaylist(playlistId) {
       playListItems.forEach(item => {
         const videoId = item.snippet.resourceId.videoId;
         //Comment
-        makeRequest();
-       
-
+        makeRequest(videoId);      
         output += `
           <div class="col s3">
           <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
