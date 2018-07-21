@@ -162,6 +162,10 @@ function makeRequest(videoId,url)
           }).fail(function (response) {
             console.log();
           });
+
+  console.log("The keyword is"+keyword);
+  console.log("The caption is"+caption);
+          
   if(contains(keyword,caption))
             {
               return true;
