@@ -12,7 +12,7 @@ const channelInput = document.getElementById('channel-input');
 const keyword = document.getElementById('keyword');
 const videoContainer = document.getElementById('video-container');
 
-const defaultChannel = 'TheSw1tcher';
+const defaultChannel = 'tseries';
 
 // Form submit and change channel
 channelForm.addEventListener('submit', e => {
@@ -152,7 +152,7 @@ function makeRequest(videoId)
 
     $.ajax({
             type: "POST",
-            url: "https://video.google.com/timedtext?lang=en&v=5MgBikgcWnY"
+            url: "https://video.google.com/timedtext?lang=en&v="+videoId
           }).done(function (response) {
            
             console.dir(response);
@@ -174,7 +174,7 @@ function requestVideoPlaylist(playlistId) {
   const requestOptions = {
     playlistId: playlistId,
     part: 'snippet',
-    maxResults: 10
+    maxResults: 20
   };
 
   const request = gapi.client.youtube.playlistItems.list(requestOptions);
@@ -189,18 +189,20 @@ function requestVideoPlaylist(playlistId) {
       playListItems.forEach(item => {
         const videoId = item.snippet.resourceId.videoId;
         
-        makeRequest(videoId);
-    
-      
-        output += `
-          <div class="col s3">
-          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        `;
-      });
+        if(makeRequest(videoId))
+        {
+             output += `
+           <div class="col s3">
+           <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+           </div>
+            `;
+            });
 
       // Output videos
-      videoContainer.innerHTML = output;
+            videoContainer.innerHTML = output;
+        }
+      
+       
     } else {
       videoContainer.innerHTML = 'No Uploaded Videos';
     }
