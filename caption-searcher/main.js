@@ -9,7 +9,7 @@ const signoutButton = document.getElementById('signout-button');
 const content = document.getElementById('content');
 const channelForm = document.getElementById('channel-form');
 const channelInput = document.getElementById('channel-input');
-const keyword = document.getElementById('keyword').value;
+const keywordInput = document.getElementById('keyword');
 const videoContainer = document.getElementById('video-container');
 
 const defaultChannel = 'tseries';
@@ -19,8 +19,9 @@ channelForm.addEventListener('submit', e => {
     e.preventDefault();
 
     const channel = channelInput.value;
+    const keyword = keywordInput.value;
 
-    getChannel(channel);
+    getChannel(channel,keyword);
 });
 
 // Load auth2 library
@@ -79,7 +80,7 @@ function showChannelData(data) {
 }
 
 // Get channel from API
-function getChannel(channel) {
+function getChannel(channel,keyword) {
     gapi.client.youtube.channels
         .list({
             part: 'snippet,contentDetails,statistics',
@@ -112,7 +113,7 @@ function getChannel(channel) {
             showChannelData(output);
 
             const playlistId = channel.contentDetails.relatedPlaylists.uploads;
-            requestVideoPlaylist(playlistId);
+            requestVideoPlaylist(playlistId,keyword);
         })
         .catch(err => alert('Does not exist'));
 }
@@ -147,7 +148,7 @@ function parseXML(xml) {
 }
 
 
-function requestVideoPlaylist(playlistId) {
+function requestVideoPlaylist(playlistId,keyword) {
     const requestOptions = {
         playlistId: playlistId,
         part: 'snippet',
@@ -155,7 +156,7 @@ function requestVideoPlaylist(playlistId) {
     };
 
     const request = gapi.client.youtube.playlistItems.list(requestOptions);
-
+    console.log("The keyword is" + keyword);
     request.execute(response => {
 
         const playListItems = response.result.items;
@@ -174,6 +175,7 @@ function requestVideoPlaylist(playlistId) {
                     success: function(response, videoId) {
 
                         var caption = parseXML(response);
+                       
                         console.log("The keyword is" + keyword);
                         console.log("The caption is" + caption);
 
