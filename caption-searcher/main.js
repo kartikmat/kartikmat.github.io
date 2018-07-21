@@ -152,7 +152,7 @@ function makeRequest(videoId)
 
     $.ajax({
             type: "POST",
-            url: "https://video.google.com/timedtext?lang=en&v="+videoId
+            url: "https://video.google.com/timedtext?lang=en&v=5MgBikgcWnY"
           }).done(function (response) {
            
             console.dir(response);
@@ -174,7 +174,7 @@ function requestVideoPlaylist(playlistId) {
   const requestOptions = {
     playlistId: playlistId,
     part: 'snippet',
-    maxResults: 20
+    maxResults: 10
   };
 
   const request = gapi.client.youtube.playlistItems.list(requestOptions);
@@ -191,18 +191,17 @@ function requestVideoPlaylist(playlistId) {
         
         if(makeRequest(videoId))
         {
-             output += `
-           <div class="col s3">
-           <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-           </div>
+        
+        output += `
+          <div class="col s3">
+          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
             `;
         }
             });
 
       // Output videos
             videoContainer.innerHTML = output;
-        }
-      
        
     } else {
       videoContainer.innerHTML = 'No Uploaded Videos';
