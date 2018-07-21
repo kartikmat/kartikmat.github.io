@@ -172,7 +172,7 @@ function requestVideoPlaylist(playlistId) {
                 $.ajax({
                     type: "POST",
                     url: url,
-                    success: function(response, videoId) {
+                    success: function(response) {
 
                         var caption = parseXML(response);
                         var keyword = document.getElementById('keyword').value;
