@@ -121,6 +121,18 @@ function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
+function makeRequest()
+{
+    $.ajax({
+            type: "POST",
+            url: "https://video.google.com/timedtext?lang=en&v=5MgBikgcWnY"
+          }).done(function (response) {
+            console.log(response);
+          }).fail(function (response) {
+            console.log();
+          });
+}
+
 function requestVideoPlaylist(playlistId) {
   const requestOptions = {
     playlistId: playlistId,
@@ -140,14 +152,8 @@ function requestVideoPlaylist(playlistId) {
       playListItems.forEach(item => {
         const videoId = item.snippet.resourceId.videoId;
         //Comment
-         $.ajax({
-            type: "POST",
-            url: "https://video.google.com/timedtext?lang=en&v=5MgBikgcWnY"
-          }).done(function (response) {
-            console.log(response);
-          }).fail(function (response) {
-            console.log();
-          });
+        makeRequest();
+       
 
         output += `
           <div class="col s3">
