@@ -19,7 +19,7 @@ channelForm.addEventListener('submit', e => {
     e.preventDefault();
 
     const channel = channelInput.value;
-   
+
 
     getChannel(channel);
 });
@@ -161,7 +161,7 @@ function requestVideoPlaylist(playlistId) {
 
         const playListItems = response.result.items;
         if (playListItems) {
-            videoContainer.innerHTML = '<br><h4 class="center-align">Latest Videos</h4>';
+            videoContainer.innerHTML = '<br><h4 class="center-align">Suggested Videos</h4>';
 
             // Loop through videos and append output
             playListItems.forEach(item => {
@@ -176,22 +176,33 @@ function requestVideoPlaylist(playlistId) {
 
                         var caption = parseXML(response);
                         var keyword = document.getElementById('keyword').value;
-                       
+
+                        var wordArray = keyword.split(" ");
+
                         console.log("The keyword is" + keyword);
                         console.log("The caption is" + caption);
-                        
-                        if (contains(keyword, caption)) {
-                            console.log("The phrase is in the video");
-                            console.log("The videoId is " + videoId);
-                            output = `
+
+                        for (let i = 0; i < wordArray.length; i++) {
+                            const element = wordArray[i];
+
+                            if (contains(element, caption)) {
+                                console.log("The phrase is in the video");
+                                console.log("The videoId is " + videoId);
+                                output = `
       <div class="col s3">
       <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
       `;
-                            // Output videos
-                            videoContainer.innerHTML += output;
+                                // Output videos
+                                videoContainer.innerHTML += output;
+                                i = wordArray.length;
+                            }
+
 
                         }
+
+
+
 
                     }
                 });
